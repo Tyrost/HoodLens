@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Poppins, Space_Grotesk, Roboto_Mono, Outfit, Dosis, Roboto, Noto_Sans, Saira } from "next/font/google";
+
 import "./globals.css";
+
+// Fonts (Modify weights as needed)
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +14,35 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400","600","700"], variable: "--font-poppins" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+
+const dosisScript = Dosis({
+  variable: "--font-dosis-script",
+  subsets: ["latin"],
+});
+
+const robotoScript = Roboto({ 
+  variable: "--font-roboto-script",
+  subsets: ["latin"],
+});
+
+const sairaScript = Saira({ 
+  variable: "--font-saira-script",
+  subsets: ["latin"],
+});
+
+const notoScript = Noto_Sans({
+  variable: "--font-noto-script",
+  subsets: ["latin"],
+  weight: ["200", "300", "500"]
+})
+
+// === \\
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +57,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} 
+        ${poppins.variable} ${spaceGrotesk.variable} ${robotoMono.variable} ${outfit.variable}
+        ${dosisScript.variable} ${robotoScript.variable} ${notoScript.variable} ${sairaScript.variable}  antialiased`}
       >
         {children}
       </body>
