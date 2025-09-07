@@ -1,8 +1,26 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-inter: 'Inter Script', normal;
+
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-roboto-mono: "Roboto Mono", monospace;
+  --font-outfit: "Outfit", sans-serif;
+  --font-dosis-script: "Dosis", cursive;
+  --font-roboto-script: "Roboto", sans-serif;
+  --font-saira-script: "Saira", sans-serif;
+  --font-noto-script: "Noto Sans", sans-serif;
+  --font-autowide: "Audiowide", sans-serif;
+  --font-code: "Google Sans Code", sans-serif;
 }
 
 @theme inline {
@@ -14,7 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -22,5 +40,45 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: spaceGrotesk, Helvetica, sans-serif, inter;
+}
+
+.font-code { font-family: var(--font-code); }
+.font-geist { font-family: var(--font-geist-sans); }
+.font-geist-mono { font-family: var(--font-geist-mono); }
+.font-inter { font-family: var(--font-inter); }
+.font-poppins { font-family: var(--font-poppins); }
+.font-spaceGrotesk { font-family: var(--font-space-grotesk); }
+.font-robotoMono { font-family: var(--font-roboto-mono); }
+.font-outfit { font-family: var(--font-outfit); }
+.font-dosis { font-family: var(--font-dosis-script); }
+.font-roboto { font-family: var(--font-roboto-script); }
+.font-saira { font-family: var(--font-saira-script); }
+.font-noto { font-family: var(--font-noto-script); }
+.font-autowide { font-family: var(--font-autowide); }
+@keyframes blob-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -40px) scale(1.2); }
+}
+
+@keyframes blob-slower {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-60px, 30px) scale(1.15); }
+}
+
+@keyframes blob-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 20px) scale(1.25); }
+}
+
+.animate-blob-slow {
+  animation: blob-slow 18s ease-in-out infinite;
+}
+
+.animate-blob-slower {
+  animation: blob-slower 26s ease-in-out infinite;
+}
+
+.animate-blob-medium {
+  animation: blob-medium 22s ease-in-out infinite;
 }
