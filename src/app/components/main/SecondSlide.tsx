@@ -43,10 +43,11 @@ return (
     className="w-full h-auto"
   >
     {/* Content */}
-    <div className="flex p-[50px] max-h-auto">
+    <div className="flex p-[50px] items-center">
         <GridProp image_path={"/misc/man.png"}/>
-        <div className="relative flex-cols  ml-[50px]">
-            <h1 className="font-spaceGrotesk text-[70px] font-semibold">
+        
+        <div className="relative ml-[50px] font-spaceGrotesk text-[clamp(0.8rem,1.2vw,1.25rem)] leading-relaxed">
+            <h1 className="font-semibold text-[3.5em]">
                 Here&apos;s how it works:
             </h1>
             <motion.div
@@ -55,21 +56,21 @@ return (
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }} 
                 className="relative mt-[30px]"
                 >
-                <div className="space-y-5 font-spaceGrotesk">
-                  <p className="font-light text-[20px] text-base/10">
-                  <span className="font-bold text-[22px]">Search your ideal place to live.</span>
+                <div className="space-y-5 text-base/1em text-[1em]">
+                  <p className="font-light">
+                  <span className="font-bold text-[1.5em]">Search your ideal place to live.</span>
                   <br/>Look for any neighborhood and instantly pull up real-time data and metrics, not just prices.</p>
 
-                  <p className="font-light text-[20px] text-base/10">
-                  <span className="font-bold text-[22px]">See key insights.</span>
+                  <p className="font-light">
+                  <span className="font-bold text-[1.5em]">See key insights.</span>
                   <br/>Safety, walkability, internet speeds, rent trends. Observe side-by-side dashboards for smarter decisions.</p>
 
-                  <p className="font-light text-[20px] text-base/10">
-                  <span className="font-bold text-[22px]">Personalized fit.</span>
+                  <p className="font-light">
+                  <span className="font-bold text-[1.5em]">Personalized fit.</span>
                   <br/>Our system highlights areas that match your lifestyle.</p>
 
-                  <p className="font-light text-[20px] text-base/10">
-                  <span className="font-bold text-[22px]">Stay up-to-date.</span>
+                  <p className="font-light">
+                  <span className="font-bold text-[1.5em]">Stay up-to-date.</span>
                   <br/>Fresh data keeps your choices relevant and accurate.</p>
                 </div>
             </motion.div>
@@ -80,12 +81,12 @@ return (
     </div>
 
   {/* Second Grid Section */}
-  <div className="flex justify-center m-[50px] mt-[200px] text-left">
+  <div className="flex items-center m-[3%] mt-[200px] text-left font-spaceGrotesk text-[clamp(0.8rem,1.2vw,1.25rem)] leading-relaxed">
     <div className="w-auto">
-      <h2 className="font-spaceGrotesk text-[48px] font-semibold mb-6">
+      <h2 className="text-[2.5em] font-semibold mb-6">
         Your dream neighborhood, simplified.
       </h2>
-      <p className="text-[18px] text-base/12 font-light font-spaceGrotesk">
+      <p className="text-[0.9em] text-base/12 font-light">
       Feeling uncertain about your next move? You&apos;re not alone. 
       A recent Home Bay survey revealed a sharp rise in <span className="font-bold">move-in regret, 
       with 86% of Americans regretting their move</span> in 2023. This is a dramatic increase from 75% in 2022, 
@@ -102,7 +103,7 @@ return (
     </div>
 
     <div className="w-1/2 flex justify-end pl-[50px]">
-      <GridProp image_path="/misc/home.png" resize={[600, 600]} />
+      <GridProp image_path="/misc/home.png" />
     </div>
   </div>
   <Footer/>

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 type GridPropProps = {
   image_path: string;
-  resize?: [number, number]; // optional tuple of [width, height]
+  resize?: [string, string]; // use strings like "50%", "20vw", etc.
 };
 
 const GridProp = ({ image_path, resize }: GridPropProps) => {
-  const [width, height] = resize ?? [400, 400]; // default to 400x400
+  const [width, height] = resize ?? ["100%", "100%"];
 
   return (
-    <div className="flex relative w-[600px] h-[600px] rounded-full overflow-hidden border border-white/20">
+    <div className="flex relative flex-shrink-0 w-[30vw] h-[30vw] rounded-full overflow-hidden border border-white/20">
       {/* Grid background */}
       <div
         className="absolute inset-0"
@@ -22,12 +22,14 @@ const GridProp = ({ image_path, resize }: GridPropProps) => {
       />
 
       {/* Centered image */}
-      <div className="absolute inset-0 flex justify-center items-center">
+      <div
+        className="absolute inset-0 flex justify-center items-center"
+        style={{ width, height }}
+      >
         <Image
           src={image_path}
           alt="grid-image"
-          width={width}
-          height={height}
+          fill
           className="object-contain"
         />
       </div>
