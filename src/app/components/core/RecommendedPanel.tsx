@@ -75,9 +75,17 @@ const RecommendedPanel = () => {
             className="relative left-0 w-full"
             > 
             <div className="px-[100px] py-[50px]">
-            <h1 className="text-black font-bold text-[48px]">
-                Homes <span className="underline">Just for You</span>
-            </h1>
+            <div className="flex items-center justify-between h-[5vh] just">
+                <h1 className="justify-start text-black font-bold text-[5vh]">
+                    Homes <span className="underline">Just for You</span>
+                </h1>
+                <div className="flex w-auto h-[5vh] border border-black rounded-md text-nowrap justify-center items-center
+                text-black px-[1%] font-outfit cursor-pointer hover:bg-white duration-300">
+                    See Full Listing
+                </div>
+
+            </div>
+
 
             <div className="w-full h-auto grid gap-5 mt-10 [grid-template-columns:repeat(auto-fit,minmax(450px,1fr))]">
                 {homeData.map((home, i) => (

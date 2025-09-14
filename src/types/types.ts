@@ -19,3 +19,14 @@ export interface Home {
     yearRenovated: number,
     lotSize: number
 }
+
+export interface RecommendedCity {
+    name: string
+    state: string
+    country: string
+    description: string
+    images : {
+        url: string
+        title: string
+    }[];
+}

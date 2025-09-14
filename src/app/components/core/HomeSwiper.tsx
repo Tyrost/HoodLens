@@ -1,6 +1,6 @@
 import React from "react";
 import Slideshow from "../misc/Slideshow";
-import { Home } from "@/app/types/types";
+import { Home } from "@/types/types";
 import { X, Check } from "lucide-react";
 
 const HomeSwiper = ({homeList} : {homeList : Array<Home>}) => {
@@ -103,7 +103,7 @@ const HomeSwiper = ({homeList} : {homeList : Array<Home>}) => {
                                     <span className="font-medium text-gray-800">Lot Size:</span> {home.lotSize} acres
                                     </div>
                                     <div>
-                                    <span className="font-medium text-gray-800">Year Renovated:</span> {home.yearRenovated.toLocaleString() !== "0" ?? "—"}
+                                    <span className="font-medium text-gray-800">Year Renovated:</span> {home.yearRenovated.toLocaleString()}
                                     </div>
                                 </div>
                             </div> 
