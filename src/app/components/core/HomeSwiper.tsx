@@ -103,7 +103,7 @@ const HomeSwiper = ({homeList} : {homeList : Array<Home>}) => {
                                     <span className="font-medium text-gray-800">Lot Size:</span> {home.lotSize} acres
                                     </div>
                                     <div>
-                                    <span className="font-medium text-gray-800">Year Renovated:</span> {home.yearRenovated.toLocaleString() !== "0" ?? "—"}
+                                    <span className="font-medium text-gray-800">Year Renovated:</span> {home.yearRenovated.toLocaleString()}
                                     </div>
                                 </div>
                             </div> 
