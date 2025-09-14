@@ -19,7 +19,7 @@ const MainSlide = () => {
       <NavigationBar/>
     </div>  
     <div className="absolute top-[calc(50vh+(70px*1/2))] right-0 transform -translate-y-1/2 h-[80%] w-[25%] pr-[1%] z-1">
-        <Slideshow slides={slides}/>
+        <Slideshow slides={slides} arrows={true}/>
     </div>
 
     
@@ -27,7 +27,7 @@ const MainSlide = () => {
       <Collage/>
     
       <div className="relative text-center px-6 max-w-3xl text-[clamp(0.9rem,1.2vw,1.25rem)] leading-relaxed">
-        <h1 className="font-bold tracking-tight text-gray-900 text-[clamp(2rem,4vw,3.5rem)]">
+        <h1 className="font-bold tracking-tight text-gray-900 text-[clamp(5rem,4vw,3.5rem)]">
           Find the Best Home for <span className="text-green-400">You</span>
         </h1>
 
