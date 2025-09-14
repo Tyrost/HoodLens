@@ -13,8 +13,8 @@ const Footer = () => {
 
     return (
         <>
-        <div className="relative mt-[200px] w-full h-fit py-[50px] bg-stone-900 border-t-[2px] border-white/30 border-dotted">
-        <div className="flex justify-center -m-[70px]">
+        <div className="relative w-full h-fit py-[50px] bg-stone-900 border-t-[2px] border-white/30 border-dotted">
+        <div className="flex justify-center">
             <Logo path="/logo/FullWhite.png" size={250}/>
         </div>
         <div className="grid grid-cols-5 gap-auto p-8">

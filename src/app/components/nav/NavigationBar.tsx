@@ -15,6 +15,7 @@ const NavigationBar = () => {
       </div>
 
       <div className="flex space-x-8">
+        <AnimatedButton label="Home" onClick={() => router.push("/")} />
         <AnimatedButton label="Discover" onClick={() => router.push("/discover")} />
         <AnimatedButton label="Maps" onClick={() => router.push("/")} />
         <AnimatedButton label="Sell" onClick={() => router.push("/")} />

@@ -7,7 +7,7 @@ type Slide = {
   title: string;
 };
 
-const Slideshow = ({ slides }: { slides: Slide[] }) => {
+const Slideshow = ({ slides, arrows=true }: { slides: Slide[], arrows: boolean }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -35,6 +35,7 @@ const Slideshow = ({ slides }: { slides: Slide[] }) => {
 
   const sliderStyles: React.CSSProperties = {
     height: "100%",
+    width: "100%",
     position: "relative",
     overflow: "hidden",
     borderRadius: "10px",
@@ -82,15 +83,19 @@ const Slideshow = ({ slides }: { slides: Slide[] }) => {
       {/* Current Slide */}
       <div style={slideStyles}></div>
 
-      {/* Left Arrow */}
-      <div style={{ ...arrowBase, left: "20px" }} onClick={goToPrevious}>
-        <ChevronLeft color="black" size={40} />
-      </div>
+      { arrows && ( // check if arrows are wanted
+        <>
+          <div style={{ ...arrowBase, left: "20px" }} onClick={goToPrevious}>
+            <ChevronLeft color="black" size={40} />
+          </div>
 
-      {/* Right Arrow */}
-      <div style={{ ...arrowBase, right: "20px" }} onClick={goToNext}>
-        <ChevronRight color="black" size={40} />
-      </div>
+        
+          <div style={{ ...arrowBase, right: "20px" }} onClick={goToNext}>
+            <ChevronRight color="black" size={40} />
+          </div>
+        </>
+      )}
+
 
       {/* Dots */}
       <div style={dotsContainerStyles}>

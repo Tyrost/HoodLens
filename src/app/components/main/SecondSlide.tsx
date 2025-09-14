@@ -81,7 +81,7 @@ return (
     </div>
 
   {/* Second Grid Section */}
-  <div className="flex items-center m-[3%] mt-[200px] text-left font-spaceGrotesk text-[clamp(0.8rem,1.2vw,1.25rem)] leading-relaxed">
+  <div className="flex items-center m-[3%] my-[200px] text-left font-spaceGrotesk text-[clamp(0.8rem,1.2vw,1.25rem)] leading-relaxed">
     <div className="w-auto">
       <h2 className="text-[2.5em] font-semibold mb-6">
         Your dream neighborhood, simplified.

@@ -1,10 +1,15 @@
 'use client';
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { Heart } from "lucide-react";
 
 const RecommendedPanel = () => {
 
-    const homeData = [
+    const handleLike = () => {
+
+    }
+
+    const homeData = [ // dummy home data
         {   
             price: "100,000",
             bedrooms: "4",
@@ -63,21 +68,13 @@ const RecommendedPanel = () => {
 
     return (
         <>
-        {/* <div className="absolute -mt-[10%] z-[-1]">
-            <Image
-            src={"/images/Map.jpg"}
-            alt={"Map Image"}
-            width={900}
-            height={500}
-            className="w-[100vw] h-auto"
-            />
-        </div> */}
         <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute left-0 p-[100px] w-full bg-green-200"
+            className="relative left-0 w-full"
             > 
+            <div className="px-[100px] py-[50px]">
             <h1 className="text-black font-bold text-[48px]">
                 Homes <span className="underline">Just for You</span>
             </h1>
@@ -100,6 +97,11 @@ const RecommendedPanel = () => {
                     </div>
 
                     {/* Content */}
+                    <div className="absolute flex border border-white rounded-full m-[20px] 
+                    w-[40px] h-[40px] justify-center items-center hover:scale-[1.4] transition-all duration-300"
+                    onClick={handleLike}>
+                            <Heart color="red" fill="red"/>
+                    </div>
                     <div className="flex flex-col justify-between flex-grow p-4">
                         <h1 className="font-poppins font-bold tracking-lg text-[28px] text-black">
                         ${home.price}
@@ -120,7 +122,7 @@ const RecommendedPanel = () => {
                 ))}
             </div>
 
-                
+            </div> 
         </motion.div>
         </>
     );
