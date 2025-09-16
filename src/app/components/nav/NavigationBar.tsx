@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import Logo from "../misc/Logo";
 import AnimatedButton from "../misc/AnimatedButton";
-import SigninButton from "./SigninButton";
+import DropdownButton from "./DropdownButton";
 import LanguageButton from "../misc/LanguageButton";
 
 const NavigationBar = () => {
@@ -23,7 +23,7 @@ const NavigationBar = () => {
       </div>
       <div className="absolute flex space-x-5 items-center right-4">
         <LanguageButton/>
-        <SigninButton/>
+        <DropdownButton/>
       </div>
     </div>
   );
