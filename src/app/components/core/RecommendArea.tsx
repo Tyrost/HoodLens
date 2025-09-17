@@ -16,9 +16,8 @@ const RecommendArea = () => {
         ]
     }
     
-    const key = "AIzaSyD6n4FGGgiFrM5GQYl2NhT1wkkn4CWlo1A"
     const mapFrameURL = `https://www.google.com/maps/embed/v1/place
-    ?key=${key}
+    ?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}
     &q=${city.name}+${city.state}
     &zoom=16
     &maptype=satellite
