@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <ClerkProvider afterSignInUrl={"/dashboard"} afterSignOutUrl={"/"} afterSignUpUrl={"/auth/login"} appearance={{ theme: dark }}>
+    <ClerkProvider afterSignInUrl={"/dashboard?page=general"} afterSignOutUrl={"/"} afterSignUpUrl={"/auth/login"} appearance={{ theme: dark }}>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} 

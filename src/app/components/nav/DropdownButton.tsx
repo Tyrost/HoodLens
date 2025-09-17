@@ -6,15 +6,17 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { useClerk } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 
 
 const DropdownButton = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const router = useRouter();
     const dropdownRef = useRef<HTMLDivElement>(null);
     const { signOut } = useClerk();
+    const { isSignedIn, user } = useUser();
+
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -33,7 +35,7 @@ const DropdownButton = () => {
     }, [dropdownOpen]);
 
     const handleLogout = () => {
-        setIsLoggedIn(false)
+        console.log("This was pressed.")
         setDropdownOpen(false)
         signOut(() => {router.push("/")})
     }
@@ -41,7 +43,7 @@ const DropdownButton = () => {
     return (
         <div className="relative" ref={dropdownRef}>
             <Image
-                src={isLoggedIn ? "/images/child.jpg" : "/user_logged_img.png"}
+                src={isSignedIn ? user.imageUrl : "/user_logged_img.png"}
                 alt="Sign in User"
                 width={36}
                 height={36}
@@ -50,7 +52,7 @@ const DropdownButton = () => {
             />
 
             {dropdownOpen && (
-                isLoggedIn ? (
+                isSignedIn ? (
                     <div className="absolute right-0 mt-2 w-[12vw] bg-white shadow-lg rounded-md border border-black text-black z-10">
                         <ul className="py-1">
                             <li>
@@ -63,7 +65,7 @@ const DropdownButton = () => {
                             </li>
                             <li>
                                 <Link
-                                    href="/dashboard"
+                                    href="/dashboard?page=general"
                                     className="block px-4 py-2 hover:bg-gray-100 transition-all duration-300"
                                 >
                                     Dashboard
@@ -88,7 +90,7 @@ const DropdownButton = () => {
                             <div className="w-full h-[1px] border border-black/20 my-2"></div>
                             <li>
                                 <Link
-                                    href="/dashboard"
+                                    href="/dashboard?page=general"
                                     className="block px-4 py-2 hover:bg-gray-100 transition-all duration-300"
                                 >
                                     Help
@@ -103,7 +105,7 @@ const DropdownButton = () => {
                                 </Link>
                             </li>
                             <li className="block px-4 py-2 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
-                            onClick={() => {handleLogout}}>
+                            onClick={() => {handleLogout()}}>
                                     Sign Out
                             </li>
                             
@@ -123,7 +125,7 @@ const DropdownButton = () => {
                             <div className="w-full h-[1px] border border-black/20 my-2"></div>
                             <li>
                                 <Link
-                                    href="/dashboard"
+                                    href="/dashboard?page=general"
                                     className="block px-4 py-2 hover:bg-gray-100 transition-all duration-300"
                                 >
                                     Help

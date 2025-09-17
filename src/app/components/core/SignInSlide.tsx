@@ -54,12 +54,15 @@ const SignInSlide = () => {
               <div className="bg-neutral-700/50 p-6 rounded-2xl backdrop-blur-sm border border-gray-600/50">
                 <SignIn 
                   signUpUrl="/auth/register"
+                  afterSignOutUrl={"/"}
+                  afterSignInUrl={"/dashboard?page=general"}
+                  redirectUrl={"/"}
                   appearance={{
                     elements: {
                         formButtonPrimary: "bg-gradient-to-r from-green-700 to-green-300 font-outfit text-sm font-medium"
                     }
                   }}
-                  afterSignOutUrl={"/"}
+
                 />
               </div>
             </div>
@@ -85,7 +88,6 @@ const SignInSlide = () => {
                       avatarBox: "w-12 h-12 ring-2 ring-blue-500/50 hover:ring-blue-400 transition-all duration-200"
                     }
                   }}
-                  signInUrl="/dashboard"
                 />
               </div>
             </div>

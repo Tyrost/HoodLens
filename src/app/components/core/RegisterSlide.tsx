@@ -2,8 +2,24 @@
 import { SignUp } from "@clerk/nextjs"
 import GoBackHomeButton from "@/app/components/misc/BackHomeButton"
 import { motion } from "framer-motion"
+import { useUser } from '@clerk/nextjs'
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 const RegisterSlide = () => {
+
+    const { isSignedIn, isLoaded } = useUser();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (!isLoaded) return 
+
+        if (isSignedIn) {
+            router.push("/dashboard?page=general")
+        }
+    }, [isSignedIn, router]) 
+
+    if (!isLoaded) return <div className='flex w-full min-h-screen justify-center items-center text-[3vw] text-black'>Redirecting...</div>
 
     return (
         <>
@@ -77,6 +93,7 @@ const RegisterSlide = () => {
                     <div className="flex justify-center items-center h-full ">
                         <SignUp
                         signInUrl="/auth/login"
+                        afterSignUpUrl={"/dashboard?page=general"}
                         appearance={{
                             elements: {
                                 formButtonPrimary: "bg-gradient-to-r from-green-700 to-green-300 font-outfit text-sm font-medium"
