@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 
 
-const SearchBar = ({width, placeholder} : {width: number | string, placeholder: string}) => {
+const SearchBar = ({width, placeholder, rounding} : {width: number | string, rounding: number | string, placeholder: string}) => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [isFocused, setIsFocused] = useState(false);
@@ -13,7 +13,7 @@ const SearchBar = ({width, placeholder} : {width: number | string, placeholder: 
         width: typeof width === 'string' ? width : width,
         height: "50px",
         border: `2px solid ${isFocused ? '#3b82f6' : '#e5e7eb'}`,
-        borderRadius: '40px',
+        borderRadius: rounding,
         display: 'flex',
         alignItems: 'center',
         transition: 'border-color 0.2s ease',

@@ -1,6 +1,6 @@
 import React from "react";
 import Slideshow from "../misc/Slideshow";
-import { Home } from "@/app/types/types";
+import { Home } from "@/types/types";
 import { X, Check } from "lucide-react";
 
 const HomeSwiper = ({homeList} : {homeList : Array<Home>}) => {

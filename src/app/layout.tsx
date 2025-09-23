@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from '@clerk/nextjs'
+import { dark } from "@clerk/themes";
 import { Geist, Geist_Mono, Inter, Poppins, Space_Grotesk, Roboto_Mono, Outfit, Dosis, Roboto, Noto_Sans, Saira, Audiowide, Source_Code_Pro } from "next/font/google";
 
 import "./globals.css";
@@ -57,6 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <>
+    <ClerkProvider afterSignInUrl={"/dashboard?page=general"} afterSignOutUrl={"/"} afterSignUpUrl={"/auth/login"} appearance={{ theme: dark }}>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} 
@@ -67,5 +71,7 @@ export default function RootLayout({
         {children}
       </body>
     </html>
+    </ClerkProvider>
+    </>
   );
 }
