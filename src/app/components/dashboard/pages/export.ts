@@ -1,6 +1,6 @@
 
 import Analytics from "./Analytics"
-import General from "./General"
+import General from "./general/General"
 import FAQ from "./FAQ"
 import Favorites from "./Favorites"
 import ActivityFeed from "./Feed"

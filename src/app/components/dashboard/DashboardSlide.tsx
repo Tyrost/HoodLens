@@ -44,9 +44,9 @@ const DashboardSlide = ({user} : {user: UserResource | null | undefined}) => {
             <NavigationBar/>
         </div>
 
-        <div className="flex h-screen pt-[70px]"> {/* Add top padding to account for fixed navbar */}
+        <div className="flex min-h-screen pt-[70px] bg-neutral-950"> {/* Add top padding to account for fixed navbar */}
             {/* Left Panel */}
-            <div className="fixed h-full w-[20%] border-r border-white bg-black">
+            <div className="fixed h-full w-[20%] border-r border-white bg-black top-[70px]">
                 {/* Main */}
                 <div className="flex flex-col">
                 <ul className="flex flex-col w-[100%] text-white/80 font-outfit text-[16px] gap-[1vh] text-nowrap m-[5%]">
@@ -120,9 +120,9 @@ const DashboardSlide = ({user} : {user: UserResource | null | undefined}) => {
                 </div>
             </div>
             {/* Content */}
-            <div className="flex-1 ml-[20%] text-black bg-white p-6 w-full h-full">
+            <div className="flex-1 bg-neutral-950 ml-[20%] text-black p-6 w-full min-h-screen">
 
-                <div className="w-full text-[70px] font-outfit font-bold mb-[30px]">
+                <div className="w-full text-white text-[70px] font-outfit font-bold mb-[10px]">
                     Dashboard
                 </div>
                 {handleTabRendering()}

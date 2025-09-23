@@ -18,7 +18,7 @@ const Dashboard = () => {
     }, [isSignedIn, router]) 
 
     return (
-        !isLoaded ? (
+        !(isLoaded && isSignedIn) ? (
             <div className='flex w-full min-h-screen justify-center items-center text-[3vw] text-black'>Redirecting...</div>
         ): (
             <DashboardSlide user={user}/>

@@ -137,7 +137,7 @@ const HomeSpecificationFilters = () => {
                     </span>
                     </div>
                     <div className="flex justify-center mt-1">
-                        <p className="text-[22px] bg-green-300 pl-4 pr-4 rounded-lg">
+                        <p className="text-[22px] border border-black bg-green-300 pl-4 pr-4 rounded-lg">
                         ${priceRange[0] / 1000}k –{" "}
                         {priceRange[1] >= 1000000
                             ? priceRange[1] / 1000000 + " M"

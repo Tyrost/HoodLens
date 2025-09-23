@@ -1,5 +1,16 @@
 
 
+export interface Location {
+    houseNumber: string
+    street: string
+    town: string
+    state: string
+    zip: string
+    country: string
+    lat: number
+    lng: number
+}
+
 export interface Home {
     type: string;
     price: number;
@@ -11,6 +22,7 @@ export interface Home {
         url: string;
         title: string
     }[];
+    location?: Location
 
     likes: number,
     views: number,
@@ -29,4 +41,15 @@ export interface RecommendedCity {
         url: string
         title: string
     }[];
+}
+
+export interface RecentUpdates {
+    title: string
+    preview: string
+    author: string
+    authorImgURL: string
+    date: string
+    location?: Location
+
+    content: string
 }

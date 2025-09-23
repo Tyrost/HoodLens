@@ -11,7 +11,7 @@ const NavigationBar = () => {
   return (
     <div className="flex items-center justify-center w-full h-[70px] bg-black relative z-10 border-b border-white/30">
       <div className="absolute left-5">
-        <Logo path={"/logo/FullWhite.png"} cursor={true} />
+        <Logo path={"/logo/BetaFullWhite.png"} cursor={true} />
       </div>
 
       <div className="flex space-x-8">
