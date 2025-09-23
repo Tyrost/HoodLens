@@ -60,7 +60,8 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <ClerkProvider afterSignInUrl={"/dashboard?page=general"} afterSignOutUrl={"/"} afterSignUpUrl={"/auth/login"} appearance={{ theme: dark }}>
+    <ClerkProvider afterSignInUrl={"/dashboard?page=general"} afterSignOutUrl={"/"} afterSignUpUrl={"/auth/login"} appearance={{ theme: dark }}
+    publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} 
