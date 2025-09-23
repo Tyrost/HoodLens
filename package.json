@@ -9,8 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.32.0",
+    "@clerk/themes": "^2.4.19",
     "@react-three/drei": "^10.7.3",
     "@react-three/fiber": "^9.3.0",
+    "framer-motion": "^12.23.12",
     "google-fonts": "^1.0.0",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",

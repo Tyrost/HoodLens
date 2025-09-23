@@ -5,9 +5,9 @@ import Logo from "../components/misc/Logo";
 import { motion } from "framer-motion"
 import RecommendedPanel from "../components/core/RecommendedPanel";
 import HomeSwiper from "../components/core/HomeSwiper";
-import { Home } from "../types/types";
+import { Home } from "../../types/types";
 import Footer from "../components/main/Footer";
-import BackToTop from "../components/misc/BackToTop";
+import RecommendArea from "../components/core/RecommendArea";
 
 const Discover = () => {
 
@@ -69,13 +69,15 @@ const Discover = () => {
                 <HomeSearchFilter/>
             </div>
         </div>
-        <div className="bg-green-200 pb-[200px]">
+        <div className="bg-green-200 pb-[100px]">
             <div className="flex justify-center">
                 <RecommendedPanel/>
             </div>
            
             <HomeSwiper homeList={homes}/>
+            <RecommendArea />
         </div>
+
         <Footer/>
 
         </>

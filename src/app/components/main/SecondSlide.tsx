@@ -56,7 +56,7 @@ return (
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }} 
                 className="relative mt-[30px]"
                 >
-                <div className="space-y-5 text-base/1em text-[1em]">
+                <div className="space-y-5 text-base/1em text-[1em] font-outfit">
                   <p className="font-light">
                   <span className="font-bold text-[1.5em]">Search your ideal place to live.</span>
                   <br/>Look for any neighborhood and instantly pull up real-time data and metrics, not just prices.</p>

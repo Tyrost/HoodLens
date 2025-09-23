@@ -18,11 +18,7 @@ const MainSlide = () => {
     <div className="fixed z-2 w-full">
       <NavigationBar/>
     </div>  
-    <div className="absolute top-[calc(50vh+(70px*1/2))] right-0 transform -translate-y-1/2 h-[80%] w-[25%] pr-[1%] z-1">
-        <Slideshow slides={slides} arrows={true}/>
-    </div>
 
-    
     <section className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden">
       <Collage/>
     
