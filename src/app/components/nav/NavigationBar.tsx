@@ -4,6 +4,7 @@ import Logo from "../misc/Logo";
 import AnimatedButton from "../misc/AnimatedButton";
 import DropdownButton from "./DropdownButton";
 import LanguageButton from "../misc/LanguageButton";
+import InboxButton from "./InboxButton";
 
 const NavigationBar = () => {
   const router = useRouter();
@@ -23,6 +24,7 @@ const NavigationBar = () => {
       </div>
       <div className="absolute flex space-x-5 items-center right-4">
         <LanguageButton/>
+        <InboxButton/>
         <DropdownButton/>
       </div>
     </div>
