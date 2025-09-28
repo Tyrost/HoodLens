@@ -1,7 +1,7 @@
 "use client";
 // import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { Check, CheckCheck } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
@@ -107,7 +107,7 @@ const RadialBar = () => {
                         </li>
                         <li className={tasks.formCompletion ? "list-none" : ""}>
                             <div className="flex items-center gap-x-[10px]">
-                                <h1 className={tasks.formCompletion ? "line-through" : ""}>Take the "Getting to Know You" Test.</h1>   
+                                <h1 className={tasks.formCompletion ? "line-through" : ""}>Take the &quot;Getting to Know You&quot; Test.</h1>   
                                 <CheckCheck width={28} height={28} className={`${tasks.formCompletion ? "opacity-100" : "opacity-0"} text-green-300 drop-shadow-[0_3.5px_2.4px_rgba(0,0,0,1)]`}/>                     
                             </div>
                         </li>

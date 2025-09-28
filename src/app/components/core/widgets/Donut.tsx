@@ -6,32 +6,36 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import DashboardCard from "../../misc/DashboardCard";
 import { AvgHomePrices } from "@/types/types";
 import { numberToLegible } from "@/app/utils/misc";
+import { ApexOptions } from "apexcharts";
 
 const Donut = ({chartData} : {chartData : AvgHomePrices}) => {
 
     const colors = ["#189825", "#63CB6D", "#BEE2C1"]
 
-    const chartOptions: any = {
-        chart: {
-        type: 'donut',
+    
+
+    const chartOptions: ApexOptions = {
+      chart: {
+        type: "donut",
         fontFamily: "'Plus Jakarta Sans', sans-serif",
         toolbar: { show: false },
         height: 155,
-        },
-        colors: colors,
-        plotOptions: {
+      },
+      colors: colors,
+      plotOptions: {
         pie: {
-            donut: {
-            size: '75%',
-            background: 'transparent',
-            },
+          donut: {
+            size: "75%",
+            background: "transparent",
+          },
         },
-        },
-        stroke: { show: false },
-        dataLabels: { enabled: false },
-        legend: { show: false },
-        tooltip: { fillSeriesColor: false },
+      },
+      stroke: { show: false },
+      dataLabels: { enabled: false },
+      legend: { show: false },
+      tooltip: { fillSeriesColor: false },
     };
+    
 
   return (
     <DashboardCard title="Average Home Prices" subtitle={`Live Data in ${chartData.state}`}>

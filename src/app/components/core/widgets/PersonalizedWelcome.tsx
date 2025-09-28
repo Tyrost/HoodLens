@@ -6,9 +6,30 @@ import { MapPin, Heart, Sparkles, Compass, ArrowRight } from "lucide-react";
 
 // TODO take a look at this component and redefine the usage of the inputs
 // ex. Have backend provide a detailed summary of the user's likes.
+type Preference = {
+  label: string;
+  value: number;
+};
+
+type Location = {
+  city?: string;
+  state?: string;
+};
+
+type UserData = {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  name?: string; // fallback field you already use
+  location?: Location;
+  city?: string;   // allow flat structure
+  state?: string;  // allow flat structure
+  narrative?: string;
+  preferences?: Preference[];
+};
 
 type Props = {
-  userData?: any;               // <-- loose for now; replace with your real type later
+  userData?: UserData;               // <-- loose for now; replace with your real type later
   className?: string;           // optional style override
   onPrimaryAction?: () => void; // e.g., "Refine Preferences"
   onSecondaryAction?: () => void; // e.g., "See Matches"
@@ -36,9 +57,9 @@ export default function PersonalizedWelcome({
     if (Array.isArray(p) && p.length > 0) {
       // ensure safe numbers in 0..100
       return p
-        .map((it: any) => ({
-          label: String(it?.label ?? "Preference"),
-          value: Math.max(0, Math.min(100, Number(it?.value ?? 0))),
+        .map((it: Preference) => ({
+          label: it.label ?? "Preference",
+          value: Math.max(0, Math.min(100, it.value ?? 0)),
         }))
         .slice(0, 6);
     }

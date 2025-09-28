@@ -57,15 +57,11 @@ const SummaryPanel = () => {
                     <h1 className="flex items-center justify-start text-green-300">
                         Current Plan
                     </h1>
-                        {(userPlan === "Free") ? 
-                            <h1 className="flex items-center justify-end text-[20px] font-semibold">
-                                {userPlan}
-                            </h1> : 
-                            <h1 className="flex items-center justify-end text-[20px] font-semibold 
-                            bg-gradient-to-r from-yellow-400 via-orange-300 to-red-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gold-gradient">
-                                {userPlan}
-                            </h1>
-                        }
+                    <h1 className={`flex items-center justify-end text-[20px] font-semibold
+                    ${userPlan === "Premium +" ? "bg-gradient-to-r from-yellow-400 via-orange-300 to-red-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gold-gradient"
+                    : ""}`}>
+                        {userPlan}
+                    </h1>
                 </div>
             </div>
         </div>
