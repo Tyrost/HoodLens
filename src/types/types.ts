@@ -1,14 +1,14 @@
 
 
 export interface Location {
-    houseNumber: string
+    houseNumber?: string
     street: string
     town: string
     state: string
     zip: string
     country: string
-    lat: number
-    lng: number
+    lat?: number
+    lng?: number
 }
 
 export interface Home {
@@ -84,4 +84,28 @@ export interface SavedHome {
 
     bidDeadline?: string // expect "2024-09-23T21:38:00.594Z"
     savedCount?: number // counts the number of users that have saved this property as a way to express interest.
+}
+
+export interface DemographicData {
+    location: Location,
+    gender: string,
+    age: number,
+    nationality: string,
+}
+
+export interface AvgHomePrices {
+    homePrice: number,
+    state: string,
+    percentageChange: string,
+    series: number[],
+    labels: string[],
+};
+
+export interface Plans {
+    name: string
+    monthlyPrice: number,
+    annualPrice: number,
+    featuresIncluded: Array<string>,
+    featuresNotIncluded?: Array<string>,
+    checkoutURL: string
 }

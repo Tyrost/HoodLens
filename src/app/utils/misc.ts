@@ -21,9 +21,13 @@ export const isoToMonthDayYear = (isoString: string): string => {
   }
 }
 
-export const numberToLegible = (price: number): string => {
+export const numberToLegible = (price: number, useCommas: boolean = false): string => {
   if (price < 0) return "0";
   if (price === 0) return "0";
+
+  if (useCommas) {
+    return price.toLocaleString('en-US');
+  }
 
   if (price >= 1_000_000) {
     const millions = price / 1_000_000;
