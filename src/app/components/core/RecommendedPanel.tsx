@@ -2,69 +2,13 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Heart } from "lucide-react";
+import { Home } from "@/types/types";
 
-const RecommendedPanel = () => {
+const RecommendedPanel = ({homeData} : {homeData : Home[]}) => {
 
     const handleLike = () => {
 
     }
-
-    const homeData = [ // dummy home data
-        {   
-            price: "100,000",
-            bedrooms: "4",
-            bathrooms: "4",
-            size: 4000,
-            address: "1701 Best Lane, Eugene, OR, 97401",
-            other: "MLS ID #7891838874812 Daniel Corzo",
-            image: "/images/family.jpg"
-        },
-        {   
-            price: "100,000",
-            bedrooms: "4",
-            bathrooms: "4",
-            size: 4000,
-            address: "1701 Best Lane, Eugene, OR, 97401",
-            other: "MLS ID #7891838874812 Daniel Corzo",
-            image: "/images/family.jpg"
-        },
-        {   
-            price: "100,000",
-            bedrooms: "4",
-            bathrooms: "4",
-            size: 4000,
-            address: "1701 Best Lane, Eugene, OR, 97401",
-            other: "MLS ID #7891838874812 Daniel Corzo",
-            image: "/images/family.jpg"
-        },
-        {   
-            price: "100,000",
-            bedrooms: "4",
-            bathrooms: "4",
-            size: 4000,
-            address: "1701 Best Lane, Eugene, OR, 97401",
-            other: "MLS ID #7891838874812 Daniel Corzo",
-            image: "/images/family.jpg"
-        },
-        {   
-            price: "100,000",
-            bedrooms: "4",
-            bathrooms: "4",
-            size: 4000,
-            address: "1701 Best Lane, Eugene, OR, 97401",
-            other: "MLS ID #7891838874812 Daniel Corzo",
-            image: "/images/family.jpg"
-        },
-        {   
-            price: "100,000",
-            bedrooms: "4",
-            bathrooms: "4",
-            size: 4000,
-            address: "1701 Best Lane, Eugene, OR, 97401",
-            other: "MLS ID #7891838874812 Daniel Corzo",
-            image: "/images/family.jpg"
-        }
-    ]
 
     return (
         <>
@@ -95,9 +39,10 @@ const RecommendedPanel = () => {
                     >
                     {/* Image */}
                     <div className="relative">
+                        { /* Take only the first image presented of each home */ }
                         <Image
-                        src={home.image}
-                        alt={home.other}
+                        src={home.images[0].url} 
+                        alt={home.address}
                         width={500}
                         height={300}
                         className="w-full h-[200px] object-cover rounded-t-lg border-b-2 border-black"
@@ -116,15 +61,15 @@ const RecommendedPanel = () => {
                         </h1>
 
                         <div className="flex items-center text-[14px] text-gray-600 divide-x divide-gray-900 text-nowrap -ml-[5px]">
-                        <span className="px-2">{home.bedrooms} Bedrooms</span>
-                        <span className="px-2">{home.bathrooms} Bathrooms</span>
+                        <span className="px-2">{home.numberRooms} Bedrooms</span>
+                        <span className="px-2">{home.numberBaths} Bathrooms</span>
                         <span className="px-2">{home.size} sqft</span>
                         </div>
                     </div>
 
                     {/* Footer */}
                     <div className="text-gray-700/70 ml-[15px] text-[14px] text-nowrap mb-4">
-                        {home.other}
+                        {home.mlsID}
                     </div>
                     </div>
                 ))}

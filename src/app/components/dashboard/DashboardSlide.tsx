@@ -1,11 +1,11 @@
 "use client";
 
 import NavigationBar from "../nav/NavigationBar"
-import { useUser } from "@clerk/nextjs"
 import { Pages } from "./pages/export"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { UserResource } from '@clerk/types';
+import BackToTop from "../misc/BackToTop";
 
 const DashboardSlide = ({user} : {user: UserResource | null | undefined}) => {
 
@@ -49,7 +49,7 @@ const DashboardSlide = ({user} : {user: UserResource | null | undefined}) => {
             <div className="fixed h-full w-[20%] border-r border-white bg-black top-[70px]">
                 {/* Main */}
                 <div className="flex flex-col">
-                <ul className="flex flex-col w-[100%] text-white/80 font-outfit text-[16px] gap-[1vh] text-nowrap m-[5%]">
+                <ul className="flex flex-col w-[100%] text-white/80 font-outfit text-[19px] gap-[1vh] text-nowrap m-[5%]">
     <li
         className="w-[70%] rounded-lg p-[10px] hover:shadow-lg hover:bg-white/10 transition-all cursor-pointer"
         onClick={() => handlePageNavigation("general")}
@@ -96,7 +96,7 @@ const DashboardSlide = ({user} : {user: UserResource | null | undefined}) => {
     <div className="flex-1 bg-neutral-500 h-[1px] max-w-[30%]"></div>
 </div>
 
-<ul className="flex flex-col w-[100%] text-white/80 font-outfit text-[16px] gap-[1vh] text-nowrap m-[5%]">
+<ul className="flex flex-col w-[100%] text-white/80 font-outfit text-[19px] gap-[1vh] text-nowrap m-[5%]">
     <li
         className="w-[70%] rounded-lg p-[10px] hover:shadow-lg hover:bg-white/10 transition-all cursor-pointer"
         onClick={() => handlePageNavigation("settings")}
@@ -126,6 +126,7 @@ const DashboardSlide = ({user} : {user: UserResource | null | undefined}) => {
                     Dashboard
                 </div>
                 {handleTabRendering()}
+            <BackToTop/>
             </div>
         </div>
 
