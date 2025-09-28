@@ -60,6 +60,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
     <>
     <ClerkProvider afterSignInUrl={"/dashboard?page=general"} afterSignOutUrl={"/"} afterSignUpUrl={"/auth/login"} appearance={{ theme: dark }}
     publishableKey={key}>
+
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} 
