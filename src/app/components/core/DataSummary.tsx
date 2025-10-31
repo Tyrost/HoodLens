@@ -4,7 +4,7 @@ import chartData from "@/data/dummy/homePrices"
 import BarChartOne from "./widgets/Chart"
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-
+ 
 const DataSummaryPanel = () => {
 
     // default dummy value for now
@@ -34,8 +34,8 @@ const DataSummaryPanel = () => {
             <div className="absolute bottom-0 right-0 w-[50%] h-[50%] bg-gradient-to-tr from-green-500/10 to-orange-500/20 rounded-full blur-3xl"></div>
 
             <div className="flex flex-col text-center w-full font-outfit py-[3vh]">
-                <h1 className="text-[32px] font-semibold">Your Preference Data</h1>
-                <h1 className="text-[22px]">Summary</h1>
+                <h1 className="text-[32px] font-semibold text-white">Your Preference Data</h1>
+                <h1 className="text-[22px] text-white">Summary</h1>
             </div>
             <div className="flex flex-col justify-between max-w-full">
                 {/* Two small charts */}
