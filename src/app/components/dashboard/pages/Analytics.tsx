@@ -1,8 +1,9 @@
+import DataSummaryPanel from "../../core/DataSummary";
 
 const Analytics = () => {
     return (
         <>
-        This is the analytics page.
+        <DataSummaryPanel />
         </>
     )
 }
